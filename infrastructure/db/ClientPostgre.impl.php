@@ -34,10 +34,10 @@ class ClientPostgreSQL implements IClientDB
         
         $stmt->execute();
         if ($typeProcedure->name !== 'CALL'){
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
-        
-        echo $query;
+        $this->db = null;
+        return $rows;
     }
 
     private function buildQuery($nameProcedure, $params = null){
