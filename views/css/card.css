@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #FAFAF9;
+}
+
+.card{
+    font-family: 'Sora';
+    background-color: #FFFFFF;
+    width: 368px;
+    box-shadow: 0px 0px 8px 8px rgba(92, 102, 133, 0.05);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content{
+    padding: 16px 16px 20px 16px;
+}
+
+.card-image{
+    border-radius: 16px;
+    position: relative;
+    padding: 20px;
+    margin: 20px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.card-image-img{
+    position: relative;
+    width: 100%;
+    border-radius: 16px;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.blur-image{
+    position: absolute;
+    width: calc(100% - 32px);
+    max-height: calc(100% - 32px);
+    border-radius: 16px;
+    filter: blur(100px);
+    object-fit: fill;
+}
+
+.card-content h2{
+    font-size: 1.125rem;
+    color: #20293A;
+    margin-bottom: 6px;
+}
+
+.card-content p{
+    font-size: 0.875rem;
+    font-weight: 300;
+    color: #6C727F;
+}
+
+.card-tag{
+    padding: 0 16px;
+    display: flex;
+    gap: 1em;
+}
+
+.tag-title{
+    color: #883AE1;
+    background-color: #E6D6FC;
+    font-size: 0.625rem;
+    font-weight: bold;
+    padding: 6px 16px;
+    border-radius: 16px;
+}
+
+.card-footer{
+    border-top: 1px solid #E5EAF0;
+    padding: 20px 16px;
+}
+
+.author{
+    font-size: 0.75rem;
+    color: #6C727F;
+}
+
+@media only screen and (max-width: 465px){
+    .card{
+        width: 280px;
+    }
+}
+
+
+
+/* PARA BOOKS */
+
+.books{
+    display: flex;
+    gap: 3em;
+    flex-wrap: wrap;
+}
