@@ -5,6 +5,11 @@ class Autor
   private $nombre;
   private $estado;
 
+  public function __construct($idAutor, $nombre) {
+    $this->idAutor = $idAutor;
+    $this->nombre = $nombre;
+}
+
   public function getIdAutor()
   {
     return $this->idAutor;

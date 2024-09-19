@@ -4,8 +4,9 @@ class Editorial
     private $idEditoral;
     private $nombre;
     private $estado;
-    public function __construct()
-    {
+    public function __construct($idEditoral, $nombre) {
+        $this->idEditoral = $idEditoral;
+        $this->nombre = $nombre;
     }
 
     public function getIdEditoral()

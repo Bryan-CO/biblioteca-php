@@ -1,4 +1,9 @@
 <?php
+require_once BASE_PATH . 'domain/entities/Autor.entity.php';
+require_once BASE_PATH . 'domain/entities/Categoria.entity.php';
+require_once BASE_PATH . 'domain/entities/Editorial.entity.php';
+require_once BASE_PATH . 'domain/entities/Idioma.entity.php';
+require_once BASE_PATH . 'domain/entities/Subgenero.entity.php';
 class Libro
 {
     private $idLibro;
@@ -16,6 +21,22 @@ class Libro
     private $urlImagen;
     private $estado;
 
+    public function __construct($idLibro, $serialNumber, $nombre, $sinopsis, Autor $autor, Idioma $idioma, Editorial $editorial, Categoria $categoria, Subgenero $subgenero, $anio, $unidades, $cantPaginas, $urlImagen, $estado) {
+        $this->idLibro = $idLibro;
+        $this->serialNumber = $serialNumber;
+        $this->nombre = $nombre;
+        $this->sinopsis = $sinopsis;
+        $this->autor = $autor;
+        $this->idioma = $idioma;
+        $this->editorial = $editorial;
+        $this->categoria = $categoria;
+        $this->subgenero = $subgenero;
+        $this->anio = $anio;
+        $this->unidades = $unidades;
+        $this->cantPaginas = $cantPaginas;
+        $this->urlImagen = $urlImagen;
+        $this->estado = $estado;
+    }
 
     public function getIdLibro()
     {

@@ -5,7 +5,11 @@ class Idioma
   private $nombre;
   private $estado;
 
-
+  public function __construct($idIdioma, $nombre)
+  {
+    $this->idIdioma = $idIdioma;
+    $this->nombre = $nombre;
+  }
   public function getIdIdioma()
   {
     return $this->idIdioma;

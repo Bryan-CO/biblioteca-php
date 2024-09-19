@@ -5,7 +5,10 @@ class Categoria
     private $nombre;
     private $estado;
 
-
+    public function __construct($idCategoria, $nombre) {
+        $this->idCategoria = $idCategoria;
+        $this->nombre = $nombre;
+    }
     public function getIdCategoria()
     {
         return $this->idCategoria;
