@@ -1,6 +1,6 @@
 <?php
-require_once "domain/services/ClientDB.php";
-require_once "config/config.php";
+require_once BASE_PATH . "domain/services/ClientDB.php";
+require_once BASE_PATH . "config/config.php";
 
 class ClientPostgreSQL implements IClientDB
 {
