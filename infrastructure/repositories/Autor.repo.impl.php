@@ -1,6 +1,6 @@
 <?php
-    require_once "domain/repositories/Autor.repository.php";
-    require_once "domain/services/ClientDB.php";
+    require_once BASE_PATH . "domain/repositories/Autor.repository.php";
+    require_once BASE_PATH . "domain/services/ClientDB.php";
     class AutorRepository implements IAutorRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){
