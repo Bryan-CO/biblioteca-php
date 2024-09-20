@@ -9,11 +9,11 @@
         public function getAll(){
             return $this->dbClient->executeProcedure("getautores", TypeProcedure::FUNCTION);
         }
-        public function add(Autor $autor){
-
+        public function add($nombre){
+            $this->dbClient->executeProcedure("addautor", TypeProcedure::CALL, [$nombre]);
         }
         public function edit(Autor $autor){
-
+            
         }
         public function delete($id){
             

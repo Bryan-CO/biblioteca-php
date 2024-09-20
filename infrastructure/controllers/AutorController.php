@@ -12,9 +12,9 @@
             return self::$autorService->getAutores();
         }
 
-        public static function addAutor(Autor $autor)
+        public static function addAutor($nombre)
         {
-            self::$autorService->addAutor($autor);
+            self::$autorService->addAutor($nombre);
         }
 
         public static function editAutor($id)

@@ -8,8 +8,8 @@
         public function getAutores(){
             return $this->autorRepository->getAll();
         }
-        public function addAutor(Autor $autor){
-            $this->autorRepository->add($autor);
+        public function addAutor($nombre){
+            $this->autorRepository->add($nombre);
         }
         public function editAutor(Autor $autor){
             $this->autorRepository->edit($autor);
