@@ -1,5 +1,7 @@
 <?php
     define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/biblioteca/');
+    define('REQUEST_URL', $_SERVER['PATH_INFO']);
+    define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
     class config{
         public static $DB_USER = "postgres";
         public static $DB_PASS = "rdbHjwMBMBbmMOMatScaLQAtmgLjbTrs";
