@@ -21,10 +21,10 @@ class ClientPostgreSQL implements IClientDB
     }
     public function executeProcedure($nameProcedure, TypeProcedure $typeProcedure, $params = null)
     {
-        
+        $db = $this->getConnection();
         $query = "{$typeProcedure->value} {$this->buildQuery($nameProcedure, $params)};";
 
-        $stmt = $this->db->prepare($query);
+        $stmt = $db->prepare($query);
         if ($params !== null){
             for($i = 1; $i <= count($params); $i++){
                 $stmt->bindValue(":$i", $params[$i - 1]);
@@ -33,11 +33,12 @@ class ClientPostgreSQL implements IClientDB
         }
         
         $stmt->execute();
+
         if ($typeProcedure->name !== 'CALL'){
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $db = null;
+            return $rows;
         }
-        $this->db = null;
-        return $rows;
     }
 
     private function buildQuery($nameProcedure, $params = null){
