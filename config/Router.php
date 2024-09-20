@@ -35,9 +35,6 @@
 
             $subRuta = explode('/', $pathUrl);
             $subReqRuta = explode('/', REQUEST_URL);
-
-            print_r($subRuta);
-            print_r($subReqRuta);
             $params = [$param => $subReqRuta[2]];
 
             self::initializeRequest($params);

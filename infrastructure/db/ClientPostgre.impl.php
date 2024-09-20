@@ -28,7 +28,6 @@ class ClientPostgreSQL implements IClientDB
         if ($params !== null){
             for($i = 1; $i <= count($params); $i++){
                 $stmt->bindValue(":$i", $params[$i - 1]);
-                echo ":$i -> {$params[$i-1]}";
             }
         }
         

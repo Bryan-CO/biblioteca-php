@@ -2,28 +2,30 @@
     
     class AutorController
     {
-        private static $autorService;
+        private $autorService;
+    
         public function __construct(IAutorService $autorService)
         {
-            self::$autorService = $autorService;
+            $this->autorService = $autorService;
         }
-        public static function getAutores()
+    
+        public function getAutores()
         {
-            return self::$autorService->getAutores();
+            return $this->autorService->getAutores();
         }
-
-        public static function addAutor($nombre)
+    
+        public function addAutor($nombre)
         {
-            self::$autorService->addAutor($nombre);
+            $this->autorService->addAutor($nombre);
         }
-
-        public static function editAutor($id)
+    
+        public function editAutor($id)
         {
-            self::$autorService->editAutor($id);
+            $this->autorService->editAutor($id);
         }
-
-        public static function deleteAutor($id)
+    
+        public function deleteAutor($id)
         {
-            self::$autorService->deleteAutor($id);
+            $this->autorService->deleteAutor($id);
         }
-}
+    }

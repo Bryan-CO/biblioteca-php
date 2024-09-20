@@ -1,5 +1,5 @@
 <?php
-    define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/biblioteca/');
+    define('BASE_PATH', $_SERVER['DOCUMENT_ROOT'] . '/');
     define('REQUEST_URL', $_SERVER['PATH_INFO']);
     define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
     class config{
