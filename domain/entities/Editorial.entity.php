@@ -1,10 +1,11 @@
 <?php
-class Editorial
+class Editorial implements JsonSerializable
 {
     private $idEditoral;
     private $nombre;
     private $estado;
-    public function __construct($idEditoral, $nombre) {
+    public function __construct($idEditoral, $nombre)
+    {
         $this->idEditoral = $idEditoral;
         $this->nombre = $nombre;
     }
@@ -32,5 +33,9 @@ class Editorial
     public function setestado($estado)
     {
         $this->estado = $estado;
+    }
+    public function jsonSerialize(): mixed
+    {
+        return get_object_vars($this);
     }
 }

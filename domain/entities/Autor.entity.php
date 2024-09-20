@@ -1,7 +1,7 @@
 <?php
-class Autor
+class Autor implements JsonSerializable
 {
-  private $idAutor;
+  public $idAutor;
   private $nombre;
   private $estado;
 
@@ -38,5 +38,9 @@ class Autor
   public function setEstado($estado)
   {
     $this->estado = $estado;
+  }
+  public function jsonSerialize(): mixed
+  {
+    return get_object_vars($this);
   }
 }

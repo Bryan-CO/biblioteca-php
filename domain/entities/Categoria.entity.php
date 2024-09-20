@@ -1,11 +1,12 @@
 <?php
-class Categoria
+class Categoria implements JsonSerializable
 {
     private $idCategoria;
     private $nombre;
     private $estado;
 
-    public function __construct($idCategoria, $nombre) {
+    public function __construct($idCategoria, $nombre)
+    {
         $this->idCategoria = $idCategoria;
         $this->nombre = $nombre;
     }
@@ -37,5 +38,9 @@ class Categoria
     public function setEstado($estado)
     {
         $this->estado = $estado;
+    }
+    public function jsonSerialize(): mixed
+    {
+        return get_object_vars($this);
     }
 }

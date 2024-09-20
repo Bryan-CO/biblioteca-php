@@ -4,7 +4,7 @@ require_once BASE_PATH . 'domain/entities/Categoria.entity.php';
 require_once BASE_PATH . 'domain/entities/Editorial.entity.php';
 require_once BASE_PATH . 'domain/entities/Idioma.entity.php';
 require_once BASE_PATH . 'domain/entities/Subgenero.entity.php';
-class Libro
+class Libro implements JsonSerializable
 {
     private $idLibro;
     private $serialNumber;
@@ -21,7 +21,8 @@ class Libro
     private $urlImagen;
     private $estado;
 
-    public function __construct($idLibro, $serialNumber, $nombre, $sinopsis, Autor $autor, Idioma $idioma, Editorial $editorial, Categoria $categoria, Subgenero $subgenero, $anio, $unidades, $cantPaginas, $urlImagen, $estado) {
+    public function __construct($idLibro, $serialNumber, $nombre, $sinopsis, Autor $autor, Idioma $idioma, Editorial $editorial, Categoria $categoria, Subgenero $subgenero, $anio, $unidades, $cantPaginas, $urlImagen, $estado)
+    {
         $this->idLibro = $idLibro;
         $this->serialNumber = $serialNumber;
         $this->nombre = $nombre;
@@ -186,5 +187,10 @@ class Libro
     public function setEstado($estado)
     {
         $this->estado = $estado;
+    }
+
+    public function jsonSerialize(): mixed
+    {
+        return get_object_vars($this);
     }
 }

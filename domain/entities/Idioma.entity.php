@@ -1,5 +1,5 @@
 <?php
-class Idioma
+class Idioma implements JsonSerializable
 {
   private $idIdioma;
   private $nombre;
@@ -38,5 +38,9 @@ class Idioma
   public function setEstado($estado)
   {
     $this->estado = $estado;
+  }
+  public function jsonSerialize(): mixed
+  {
+    return get_object_vars($this);
   }
 }

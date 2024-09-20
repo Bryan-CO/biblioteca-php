@@ -1,5 +1,5 @@
 <?php
-class Subgenero
+class Subgenero implements JsonSerializable
 {
   private $idSubgenero;
   private $nombre;
@@ -38,5 +38,10 @@ class Subgenero
   public function setEstado($estado)
   {
     $this->estado = $estado;
+  }
+
+  public function jsonSerialize(): mixed
+  {
+    return get_object_vars($this);
   }
 }
