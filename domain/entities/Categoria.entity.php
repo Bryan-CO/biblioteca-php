@@ -5,10 +5,11 @@ class Categoria implements JsonSerializable
     private $nombre;
     private $estado;
 
-    public function __construct($idCategoria, $nombre)
+    public function __construct($idCategoria, $nombre, $estado = true)
     {
         $this->idCategoria = $idCategoria;
         $this->nombre = $nombre;
+        $this->estado = $estado;
     }
     public function getIdCategoria()
     {

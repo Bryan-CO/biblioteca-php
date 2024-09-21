@@ -5,10 +5,11 @@ class Idioma implements JsonSerializable
   private $nombre;
   private $estado;
 
-  public function __construct($idIdioma, $nombre)
+  public function __construct($idIdioma, $nombre, $estado = true)
   {
     $this->idIdioma = $idIdioma;
     $this->nombre = $nombre;
+    $this->estado = $estado;
   }
   public function getIdIdioma()
   {

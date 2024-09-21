@@ -5,9 +5,10 @@ class Autor implements JsonSerializable
   private $nombre;
   private $estado;
 
-  public function __construct($idAutor, $nombre) {
+  public function __construct($idAutor, $nombre, $estado = true) {
     $this->idAutor = $idAutor;
     $this->nombre = $nombre;
+    $this->estado = $estado;
 }
 
   public function getIdAutor()

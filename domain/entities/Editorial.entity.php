@@ -4,10 +4,11 @@ class Editorial implements JsonSerializable
     private $idEditoral;
     private $nombre;
     private $estado;
-    public function __construct($idEditoral, $nombre)
+    public function __construct($idEditoral, $nombre, $estado = true)
     {
         $this->idEditoral = $idEditoral;
         $this->nombre = $nombre;
+        $this->estado = $estado;
     }
 
     public function getIdEditoral()

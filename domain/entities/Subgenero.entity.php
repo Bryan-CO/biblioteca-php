@@ -5,10 +5,11 @@ class Subgenero implements JsonSerializable
   private $nombre;
   private $estado;
 
-  public function __construct($idSubgenero, $nombre)
+  public function __construct($idSubgenero, $nombre, $estado = true)
   {
     $this->idSubgenero = $idSubgenero;
     $this->nombre = $nombre;
+    $this->estado = $estado;
   }
   public function getIdSubgenero()
   {
