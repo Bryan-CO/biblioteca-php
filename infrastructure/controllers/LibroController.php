@@ -1,33 +1,36 @@
 <?php
     
     class LibroController
+{
+    private $libroService;
+
+    public function __construct(ILibroService $libroService)
     {
-        private static $libroService;
-        public function __construct(ILibroService $libroService)
-        {
-            self::$libroService = $libroService;
-        }
-        public static function getLibros()
-        {
-            return self::$libroService->getLibros();
-        }
+        $this->libroService = $libroService;
+    }
 
-        public static function getLibroById($id){
-            return self::$libroService->getLibroById($id);
-        }
+    public function getLibros()
+    {
+        return $this->libroService->getLibros();
+    }
 
-        public static function addLibro($nombre)
-        {
-            self::$libroService->addLibro($nombre);
-        }
+    public function getLibroById($id)
+    {
+        return $this->libroService->getLibroById($id);
+    }
 
-        public static function editLibro($id)
-        {
-            self::$libroService->editLibro($id);
-        }
+    public function addLibro($nombre)
+    {
+        $this->libroService->addLibro($nombre);
+    }
 
-        public static function deleteLibro($id)
-        {
-            self::$libroService->deleteLibro($id);
-        }
+    public function editLibro($id)
+    {
+        $this->libroService->editLibro($id);
+    }
+
+    public function deleteLibro($id)
+    {
+        $this->libroService->deleteLibro($id);
+    }
 }
