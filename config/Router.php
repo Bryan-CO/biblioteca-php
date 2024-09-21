@@ -13,13 +13,6 @@ class Router
     {
         if (REQUEST_METHOD === 'GET' && self::isMatch($url)) {
             ob_clean();
-            header("Access-Control-Allow-Origin: *");
-
-            // Métodos HTTP permitidos
-            header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE");
-
-            // Encabezados permitidos
-            header("Access-Control-Allow-Headers: Content-Type, Authorization");
             header('Content-Type: application/json');
             $callback(self::$req);
             exit;
