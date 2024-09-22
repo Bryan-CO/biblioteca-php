@@ -1,5 +1,5 @@
 <?php
-require_once CONFIG . 'config.php';
+require_once 'config/config.php';
 require_once CONFIG . 'Router.php';
 require_once SHARED . 'ResponseModel.php';
 
