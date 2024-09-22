@@ -7,13 +7,17 @@ define('REQUEST_URL', $requestUrl);
 define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
 // Routes directories
 define('ENTITIES', BASE_PATH . "domain/entities/");
-define('IREPOSITORY', BASE_PATH . "domain/repositories/");
-define('ISERVICE', BASE_PATH . "domain/services/");
+define('I_REPOSITORY', BASE_PATH . "domain/repositories/");
+define('I_SERVICE', BASE_PATH . "domain/services/");
 define('CONTROLLER', BASE_PATH . "infrastructure/controllers/");
 define('REPOSITORY', BASE_PATH . "infrastructure/repositories/");
 define('SERVICE', BASE_PATH . "infrastructure/services/");
 define('DB', BASE_PATH . "infrastructure/db/");
 define('CONTAINER', BASE_PATH . "infrastructure/containers/");
+define('MAPPER', BASE_PATH . "adapters/mappers/");
+define('CONFIG', BASE_PATH . "config/");
+define('ROUTE', BASE_PATH . "routes/");
+define('SHARED', BASE_PATH . "shared/");
 
 $relative = str_replace($_SERVER["DOCUMENT_ROOT"], "", $_SERVER["SCRIPT_FILENAME"]);
 $folder = explode("/", trim($relative, "/"))[0];
