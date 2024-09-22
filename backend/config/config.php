@@ -5,6 +5,15 @@ $requestUrl = $folderLength > 1 ? substr($_SERVER['REQUEST_URI'], $folderLength)
 define('BASE_PATH', dirname($_SERVER['SCRIPT_FILENAME']) . '/');
 define('REQUEST_URL', $requestUrl);
 define('REQUEST_METHOD', $_SERVER['REQUEST_METHOD']);
+// Routes directories
+define('ENTITIES', BASE_PATH . "domain/entities/");
+define('IREPOSITORY', BASE_PATH . "domain/repositories/");
+define('ISERVICE', BASE_PATH . "domain/services/");
+define('CONTROLLER', BASE_PATH . "infrastructure/controllers/");
+define('REPOSITORY', BASE_PATH . "infrastructure/repositories/");
+define('SERVICE', BASE_PATH . "infrastructure/services/");
+define('DB', BASE_PATH . "infrastructure/db/");
+define('CONTAINER', BASE_PATH . "infrastructure/containers/");
 
 $relative = str_replace($_SERVER["DOCUMENT_ROOT"], "", $_SERVER["SCRIPT_FILENAME"]);
 $folder = explode("/", trim($relative, "/"))[0];
