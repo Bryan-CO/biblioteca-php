@@ -1,29 +1,31 @@
 <?php
-    
-    class IdiomaController
+
+class IdiomaController
+{
+    private $idiomaService;
+
+    public function __construct(IIdiomaService $idiomaService)
     {
-        private static $idiomaService;
-        public function __construct(IIdiomaService $idiomaService)
-        {
-            self::$idiomaService = $idiomaService;
-        }
-        public static function getIdiomas()
-        {
-            return self::$idiomaService->getIdiomas();
-        }
+        $this->idiomaService = $idiomaService;
+    }
+    
+    public function getIdiomas()
+    {
+        return $this->idiomaService->getIdiomas();
+    }
 
-        public static function addIdioma($nombre)
-        {
-            self::$idiomaService->addIdioma($nombre);
-        }
+    public function addIdioma($nombre)
+    {
+        $this->idiomaService->addIdioma($nombre);
+    }
 
-        public static function editIdioma($id)
-        {
-            self::$idiomaService->editIdioma($id);
-        }
+    public function editIdioma($id)
+    {
+        $this->idiomaService->editIdioma($id);
+    }
 
-        public static function deleteIdioma($id)
-        {
-            self::$idiomaService->deleteIdioma($id);
-        }
+    public function deleteIdioma($id)
+    {
+        $this->idiomaService->deleteIdioma($id);
+    }
 }
