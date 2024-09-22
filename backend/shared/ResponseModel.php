@@ -20,4 +20,11 @@ class ResponseModel implements JsonSerializable
         http_response_code($statusCode);
         echo json_encode($response);
     }
+
+    static function error( $message = null, $statusCode = 500,)
+    {
+        $response = new ResponseModel(false, null, $message);
+        http_response_code($statusCode);
+        echo json_encode($response);
+    }
 }

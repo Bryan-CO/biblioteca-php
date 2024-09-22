@@ -11,7 +11,7 @@ class IdiomaController
     
     public function getIdiomas()
     {
-        return $this->idiomaService->getIdiomas();
+        ResponseModel::success($this->idiomaService->getIdiomas());
     }
 
     public function addIdioma($nombre)

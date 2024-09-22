@@ -12,7 +12,7 @@ class EditorialController
     
     public function getEditoriales()
     {
-        return $this->editorialService->getEditoriales();
+        ResponseModel::success($this->editorialService->getEditoriales());
     }
 
     public function addEditorial($nombre)

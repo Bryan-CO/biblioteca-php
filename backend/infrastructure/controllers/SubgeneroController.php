@@ -12,7 +12,7 @@ class SubgeneroController
 
     public function getSubgeneros()
     {
-        return $this->subgeneroService->getSubgeneros();
+        ResponseModel::success($this->subgeneroService->getSubgeneros());
     }
 
     public function addSubgenero($nombre)

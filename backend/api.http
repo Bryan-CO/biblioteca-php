@@ -1,12 +1,30 @@
 @URL = http://192.168.100.3:1234
 
+### GET LIBROS
+GET {{URL}}/libros
+
+### GET LIBRO POR ID
+GET {{URL}}/libros/3
+
 ### GET AUTORES
 GET {{URL}}/autores
+
+### GET CATEGORIAS
+GET {{URL}}/categorias
+
+### GET EDITORIALES
+GET {{URL}}/editoriales
+
+### GET IDIOMAS
+GET {{URL}}/idiomas
+
+### GET SUBGENEROS
+GET {{URL}}/subgeneros
 
 ### POST AUTORES
 POST {{URL}}/autores
 Content-Type: application/json
 
 {
-    "nombre": "libro de sise II"
+    "nombre": "libro de sise III"
 }

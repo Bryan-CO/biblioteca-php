@@ -11,12 +11,13 @@
 
     public function getLibros()
     {
-        return $this->libroService->getLibros();
+        ResponseModel::success($this->libroService->getLibros());
     }
 
-    public function getLibroById($id)
+    public function getLibroById(Request $req)
     {
-        return $this->libroService->getLibroById($id);
+        $id = $req->params['id'];
+        ResponseModel::success($this->libroService->getLibroById($id));
     }
 
     public function addLibro($nombre)

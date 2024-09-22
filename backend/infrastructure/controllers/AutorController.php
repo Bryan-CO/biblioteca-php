@@ -11,12 +11,13 @@
     
         public function getAutores()
         {
-            return $this->autorService->getAutores();
+            ResponseModel::success($this->autorService->getAutores());
         }
     
-        public function addAutor($nombre)
+        public function addAutor(Request $req)
         {
-            return $this->autorService->addAutor($nombre);
+            $nombre = $req->body['nombre'];
+            echo json_encode($this->autorService->addAutor($nombre));
         }
     
         public function editAutor($id)

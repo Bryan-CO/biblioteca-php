@@ -11,7 +11,7 @@
             return pgToAutores($this->dbClient->executeProcedure("getautores", TypeProcedure::FUNCTION));
         }
         public function add($nombre){
-            return $this->dbClient->executeProcedure("addaut1or", TypeProcedure::FUNCTION, [$nombre]);
+            return $this->dbClient->executeProcedure("addautor", TypeProcedure::FUNCTION, [$nombre]);
         }
         public function edit(Autor $autor){
             

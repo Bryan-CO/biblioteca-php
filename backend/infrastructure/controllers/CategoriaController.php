@@ -12,7 +12,7 @@ class CategoriaController
 
     public function getCategorias()
     {
-        return $this->categoriaService->getCategorias();
+        ResponseModel::success($this->categoriaService->getCategorias());
     }
 
     public function addCategoria($nombre)

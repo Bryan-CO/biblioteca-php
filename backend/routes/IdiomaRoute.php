@@ -2,7 +2,4 @@
 
     require_once CONTAINER . 'IdiomaContainer.php';
 
-    Router::GET('/idiomas', function(Request $req){
-        $idiomas = getIdiomaController()->getIdiomas();
-        ResponseModel::success($idiomas);
-    });
+    Router::GET('/idiomas', fn() => getIdiomaController()->getIdiomas());

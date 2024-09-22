@@ -4,7 +4,7 @@ require_once REPOSITORY . 'Libro.repo.impl.php';
 require_once SERVICE . 'Libro.service.impl.php';
 require_once CONTROLLER . 'LibroController.php';
 
-function getController() : LibroController
+function getLibroController() : LibroController
 {
     $db = new ClientPostgreSQL();
     $repo = new LibroRepository($db);
