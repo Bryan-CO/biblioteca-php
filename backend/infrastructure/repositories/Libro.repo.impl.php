@@ -14,7 +14,7 @@
             return $this->dbClient->executeProcedure("getlibro", TypeProcedure::FUNCTION, [$id]);
         }
         public function add(Libro $libro){
-            $this->dbClient->executeProcedure("addlibro", TypeProcedure::CALL, [
+            return $this->dbClient->executeProcedure("addlibro", TypeProcedure::FUNCTION, [
                 $libro->getSerialNumber(),
                 $libro->getNombre(),
                 $libro->getSinopsis(),

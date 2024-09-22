@@ -11,7 +11,7 @@
             return $this->editorialRepository->getAll();
         }
         public function addEditorial($nombre){
-            $this->editorialRepository->add($nombre);
+            return $this->editorialRepository->add($nombre);
         }
         public function editEditorial(Editorial $editorial){
             $this->editorialRepository->edit($editorial);

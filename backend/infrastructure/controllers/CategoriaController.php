@@ -15,9 +15,10 @@ class CategoriaController
         ResponseModel::success($this->categoriaService->getCategorias());
     }
 
-    public function addCategoria($nombre)
+    public function addCategoria(Request $req)
     {
-        $this->categoriaService->addCategoria($nombre);
+        $nombre = $req->body['nombre'];
+        ResponseModel::success($this->categoriaService->addCategoria($nombre));
     }
 
     public function editCategoria($id)

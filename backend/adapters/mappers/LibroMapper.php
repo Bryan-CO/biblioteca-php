@@ -30,7 +30,6 @@ function pgToLibro($libros)
             $libro["subgenero"]
         );
         $lib = new Libro(
-            $libro["idlibro"],
             $libro["serialnumber"],
             $libro["nombre"],
             $libro["sinopsis"],
@@ -42,7 +41,8 @@ function pgToLibro($libros)
             $libro["anio"],
             $libro["unidades"],
             $libro["cantpaginas"],
-            $libro["urlimagen"]
+            $libro["urlimagen"],
+            $libro["idlibro"]
         );
         array_push($librosMapped, $lib);
     }

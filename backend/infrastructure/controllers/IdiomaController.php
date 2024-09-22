@@ -14,9 +14,10 @@ class IdiomaController
         ResponseModel::success($this->idiomaService->getIdiomas());
     }
 
-    public function addIdioma($nombre)
+    public function addIdioma(Request $req)
     {
-        $this->idiomaService->addIdioma($nombre);
+        $nombre = $req->body['nombre'];
+        ResponseModel::success($this->idiomaService->addIdioma($nombre));
     }
 
     public function editIdioma($id)

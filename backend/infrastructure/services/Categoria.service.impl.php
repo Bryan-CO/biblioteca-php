@@ -11,7 +11,7 @@
             return $this->categoriaRepository->getAll();
         }
         public function addCategoria($nombre){
-            $this->categoriaRepository->add($nombre);
+            return $this->categoriaRepository->add($nombre);
         }
         public function editCategoria(Categoria $categoria){
             $this->categoriaRepository->edit($categoria);

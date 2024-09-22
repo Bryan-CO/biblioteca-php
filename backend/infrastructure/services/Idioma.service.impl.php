@@ -11,7 +11,7 @@
             return $this->idiomaRepository->getAll();
         }
         public function addIdioma($nombre){
-            $this->idiomaRepository->add($nombre);
+            return $this->idiomaRepository->add($nombre);
         }
         public function editIdioma(Idioma $idioma){
             $this->idiomaRepository->edit($idioma);

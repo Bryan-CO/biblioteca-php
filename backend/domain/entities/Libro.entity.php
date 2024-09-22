@@ -21,7 +21,7 @@ class Libro implements JsonSerializable
     private $urlImagen;
     private $estado;
 
-    public function __construct($idLibro, $serialNumber, $nombre, $sinopsis, Autor $autor, Idioma $idioma, Editorial $editorial, Categoria $categoria, Subgenero $subgenero, $anio, $unidades, $cantPaginas, $urlImagen, $estado = true)
+    public function __construct($serialNumber, $nombre, $sinopsis, Autor $autor, Idioma $idioma, Editorial $editorial, Categoria $categoria, Subgenero $subgenero, $anio, $unidades, $cantPaginas, $urlImagen, $idLibro = null, $estado = true)
     {
         $this->idLibro = $idLibro;
         $this->serialNumber = $serialNumber;

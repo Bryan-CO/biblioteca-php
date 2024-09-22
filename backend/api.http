@@ -26,5 +26,56 @@ POST {{URL}}/autores
 Content-Type: application/json
 
 {
-    "nombre": "libro de sise III"
+    "nombre": "libro de sise IV"
+}
+
+### POST CATEGORIAS
+POST {{URL}}/categorias
+Content-Type: application/json
+
+{
+    "nombre": "autoayuda III"
+}
+
+### POST EDITORIALES
+POST {{URL}}/editoriales
+Content-Type: application/json
+
+{
+    "nombre": "hitlerCompanyII"
+}
+
+### POST IDIOMAS
+POST {{URL}}/idiomas
+Content-Type: application/json
+
+{
+    "nombre": "esperanto"
+}
+
+### POST SUBGENEROS
+POST {{URL}}/subgeneros
+Content-Type: application/json
+
+{
+    "nombre": "noseuqehaceconmivida"
+}
+
+### POST LIBROS
+POST {{URL}}/libros
+Content-Type: application/json
+
+{
+    "serialNumber": "123ABC",
+    "nombre": "El ponedor xd",
+    "sinopsis": "la historia del ponedor...",
+    "idAutor": 45,
+    "idIdioma": 3,
+    "idEditorial": 2,
+    "idCategoria": 2,
+    "idSubgenero": 2,
+    "anio": 2024,
+    "unidades": 4,
+    "cantPaginas": 15000,
+    "urlImagen": "http://saquenmedesise.com/img"
 }

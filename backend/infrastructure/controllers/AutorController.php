@@ -16,8 +16,13 @@
     
         public function addAutor(Request $req)
         {
-            $nombre = $req->body['nombre'];
-            echo json_encode($this->autorService->addAutor($nombre));
+            try{
+                $nombre = $req->body['nombre'];
+                ResponseModel::success($this->autorService->addAutor($nombre));
+            }
+            catch(Exception $e){
+                ResponseModel::error('Algo ocurrio :(');
+            }
         }
     
         public function editAutor($id)

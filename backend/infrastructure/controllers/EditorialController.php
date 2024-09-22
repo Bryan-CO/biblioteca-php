@@ -15,9 +15,10 @@ class EditorialController
         ResponseModel::success($this->editorialService->getEditoriales());
     }
 
-    public function addEditorial($nombre)
+    public function addEditorial(Request $req)
     {
-        $this->editorialService->addEditorial($nombre);
+        $name = $req->body['nombre'];
+        ResponseModel::success($this->editorialService->addEditorial($name));
     }
 
     public function editEditorial($id)

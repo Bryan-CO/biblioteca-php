@@ -11,7 +11,7 @@
             return pgToEditoriales($this->dbClient->executeProcedure("geteditoriales", TypeProcedure::FUNCTION));
         }
         public function add($nombre){
-            $this->dbClient->executeProcedure("addeditorial", TypeProcedure::CALL, [$nombre]);
+            return $this->dbClient->executeProcedure("addeditorial", TypeProcedure::FUNCTION, [$nombre]);
         }
         public function edit(Editorial $editorial){
             

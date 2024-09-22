@@ -11,7 +11,7 @@
             return pgToIdiomas($this->dbClient->executeProcedure("getidiomas", TypeProcedure::FUNCTION));
         }
         public function add($nombre){
-            $this->dbClient->executeProcedure("addidioma", TypeProcedure::CALL, [$nombre]);
+            return $this->dbClient->executeProcedure("addidioma", TypeProcedure::FUNCTION, [$nombre]);
         }
         public function edit(Idioma $idioma){
             

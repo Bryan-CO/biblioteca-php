@@ -11,7 +11,7 @@
             return $this->subgeneroRepository->getAll();
         }
         public function addSubgenero($nombre){
-            $this->subgeneroRepository->add($nombre);
+            return $this->subgeneroRepository->add($nombre);
         }
         public function editSubgenero(Subgenero $subgenero){
             $this->subgeneroRepository->edit($subgenero);

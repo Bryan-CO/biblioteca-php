@@ -11,7 +11,7 @@
             return pgToCategorias($this->dbClient->executeProcedure("getcategorias", TypeProcedure::FUNCTION));
         }
         public function add($nombre){
-            $this->dbClient->executeProcedure("addcategoria", TypeProcedure::CALL, [$nombre]);
+            return $this->dbClient->executeProcedure("addcategoria", TypeProcedure::FUNCTION, [$nombre]);
         }
         public function edit(Categoria $categoria){
             

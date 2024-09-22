@@ -15,9 +15,10 @@ class SubgeneroController
         ResponseModel::success($this->subgeneroService->getSubgeneros());
     }
 
-    public function addSubgenero($nombre)
+    public function addSubgenero(Request $req)
     {
-        $this->subgeneroService->addSubgenero($nombre);
+        $nombre = $req->body['nombre'];
+        ResponseModel::success($this->subgeneroService->addSubgenero($nombre));
     }
 
     public function editSubgenero($id)

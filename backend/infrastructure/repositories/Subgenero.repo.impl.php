@@ -11,7 +11,7 @@
             return pgToSubgeneros($this->dbClient->executeProcedure("getsubgeneros", TypeProcedure::FUNCTION));
         }
         public function add($nombre){
-            $this->dbClient->executeProcedure("addsubgenero", TypeProcedure::CALL, [$nombre]);
+            return $this->dbClient->executeProcedure("addsubgenero", TypeProcedure::FUNCTION, [$nombre]);
         }
         public function edit(Subgenero $subgenero){
             

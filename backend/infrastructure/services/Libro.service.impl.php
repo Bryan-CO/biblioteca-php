@@ -14,7 +14,7 @@
             return $this->libroRepository->getById($id);
         }
         public function addLibro(Libro $libro){
-            $this->libroRepository->add($libro);
+            return $this->libroRepository->add($libro);
         }
         public function editLibro(Libro $libro){
             $this->libroRepository->edit($libro);
