@@ -15,3 +15,4 @@ header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // RUTAS
 require_once 'routes/LibroRoute.php';
+require_once 'routes/AutorRoute.php';
