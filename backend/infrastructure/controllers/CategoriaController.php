@@ -1,29 +1,32 @@
 <?php
-    
-    class CategoriaController
+
+class CategoriaController
+{
+    private $categoriaService;
+
+    public function __construct(ICategoriaService $categoriaService)
     {
-        private static $categoriaService;
-        public function __construct(ICategoriaService $categoriaService)
-        {
-            self::$categoriaService = $categoriaService;
-        }
-        public static function getAutores()
-        {
-            return self::$categoriaService->getCategorias();
-        }
+        $this->categoriaService = $categoriaService;
+    }
 
-        public static function addCategoria($nombre)
-        {
-            self::$categoriaService->addCategoria($nombre);
-        }
 
-        public static function editAutor($id)
-        {
-            self::$categoriaService->editCategoria($id);
-        }
+    public function getCategorias()
+    {
+        return $this->categoriaService->getCategorias();
+    }
 
-        public static function deleteAutor($id)
-        {
-            self::$categoriaService->deleteCategoria($id);
-        }
+    public function addCategoria($nombre)
+    {
+        $this->categoriaService->addCategoria($nombre);
+    }
+
+    public function editCategoria($id)
+    {
+        $this->categoriaService->editCategoria($id);
+    }
+
+    public function deleteCategoria($id)
+    {
+        $this->categoriaService->deleteCategoria($id);
+    }
 }
