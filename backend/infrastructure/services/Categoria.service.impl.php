@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "domain/services/Categoria.service.php";
+    require_once I_SERVICE . "Categoria.service.php";
 
     class CategoriaService implements ICategoriaService{
         private $categoriaRepository;

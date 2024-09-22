@@ -1,8 +1,8 @@
 <?php
-require_once BASE_PATH . 'infrastructure/db/ClientPostgre.impl.php';
-require_once BASE_PATH . 'infrastructure/repositories/Autor.repo.impl.php';
-require_once BASE_PATH . 'infrastructure/services/Autor.service.impl.php';
-require_once BASE_PATH . 'infrastructure/controllers/AutorController.php';
+require_once DB . 'ClientPostgre.impl.php';
+require_once REPOSITORY . 'Autor.repo.impl.php';
+require_once SERVICE . 'Autor.service.impl.php';
+require_once CONTROLLER . 'AutorController.php';
 
 function getAutorController() : AutorController
 {

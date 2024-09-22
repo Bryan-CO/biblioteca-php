@@ -1,6 +1,6 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Categoria.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
+    require_once I_REPOSITORY . "Categoria.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
     class CategoriaRepository implements ICategoriaRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

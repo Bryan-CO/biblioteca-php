@@ -1,7 +1,7 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Libro.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
-    require_once BASE_PATH . 'adapters/mappers/LibroMapper.php';
+    require_once I_REPOSITORY . "Libro.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
+    require_once MAPPER . 'LibroMapper.php';
     class LibroRepository implements ILibroRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

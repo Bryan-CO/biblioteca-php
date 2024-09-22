@@ -1,7 +1,7 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Autor.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
-    require_once BASE_PATH . 'adapters/mappers/AutorMapper.php';
+    require_once I_REPOSITORY . "Autor.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
+    require_once MAPPER . 'AutorMapper.php';
     class AutorRepository implements IAutorRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

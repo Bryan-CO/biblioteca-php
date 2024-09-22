@@ -1,6 +1,6 @@
 <?php
 
-require_once BASE_PATH . "infrastructure/containers/LibroContainer.php";
+require_once CONTAINER . "LibroContainer.php";
 
 Router::GET('/libro', function ($req) {
     $libros = getController()->getLibros();

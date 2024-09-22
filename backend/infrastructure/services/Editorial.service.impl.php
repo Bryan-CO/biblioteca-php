@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "domain/services/Editorial.service.php";
+    require_once I_SERVICE . "Editorial.service.php";
 
     class EditorialService implements IEditorialService{
         private $editorialRepository;

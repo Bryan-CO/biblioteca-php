@@ -1,6 +1,6 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Editorial.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
+    require_once I_REPOSITORY . "Editorial.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
     class EditorialRepository implements IEditorialRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

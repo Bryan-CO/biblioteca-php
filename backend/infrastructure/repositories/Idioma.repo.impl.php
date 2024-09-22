@@ -1,6 +1,6 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Idioma.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
+    require_once I_REPOSITORY . "Idioma.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
     class IdiomaRepository implements IIdiomaRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

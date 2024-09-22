@@ -1,6 +1,6 @@
 <?php
-    require_once BASE_PATH . "domain/repositories/Subgenero.repository.php";
-    require_once BASE_PATH . "domain/services/ClientDB.php";
+    require_once I_REPOSITORY . "Subgenero.repository.php";
+    require_once I_SERVICE . "ClientDB.php";
     class SubgeneroRepository implements ISubgeneroRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){

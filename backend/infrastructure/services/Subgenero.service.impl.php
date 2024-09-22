@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "domain/services/Subgenero.service.php";
+    require_once I_SERVICE . "Subgenero.service.php";
 
     class SubgeneroService implements ISubgeneroService{
         private $subgeneroRepository;

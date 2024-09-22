@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "domain/services/Idioma.service.php";
+    require_once I_SERVICE . "Idioma.service.php";
 
     class IdiomaService implements IIdiomaService{
         private $idiomaRepository;

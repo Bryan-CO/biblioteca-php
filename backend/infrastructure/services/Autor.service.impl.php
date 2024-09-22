@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "domain/services/Autor.service.php";
+    require_once I_SERVICE . "Autor.service.php";
     class AutorService implements IAutorService{
         private $autorRepository;
         public function __construct(IAutorRepository $autorRepository){

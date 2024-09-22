@@ -1,10 +1,10 @@
 <?php
-require_once BASE_PATH . 'domain/entities/Libro.entity.php';
-require_once BASE_PATH . 'domain/entities/Autor.entity.php';
-require_once BASE_PATH . 'domain/entities/Categoria.entity.php';
-require_once BASE_PATH . 'domain/entities/Editorial.entity.php';
-require_once BASE_PATH . 'domain/entities/Idioma.entity.php';
-require_once BASE_PATH . 'domain/entities/Subgenero.entity.php';
+require_once ENTITIES . 'Libro.entity.php';
+require_once ENTITIES . 'Autor.entity.php';
+require_once ENTITIES . 'Categoria.entity.php';
+require_once ENTITIES . 'Editorial.entity.php';
+require_once ENTITIES . 'Idioma.entity.php';
+require_once ENTITIES . 'Subgenero.entity.php';
 function pgToLibro($libros)
 {
     $librosMapped = [];

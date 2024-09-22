@@ -1,5 +1,5 @@
 <?php
-    require_once BASE_PATH . "infrastructure/containers/AutorContainer.php";
+    require_once CONTAINER . "AutorContainer.php";
 
     Router::GET('/autores', function(){
         $autores = getAutorController()->getAutores();
