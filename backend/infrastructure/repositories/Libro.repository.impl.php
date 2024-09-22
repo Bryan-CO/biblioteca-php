@@ -2,12 +2,6 @@
     require_once BASE_PATH . "domain/repositories/Libro.repository.php";
     require_once BASE_PATH . "domain/services/ClientDB.php";
     require_once BASE_PATH . 'adapters/mappers/LibroMapper.php';
-    require_once BASE_PATH . 'domain/entities/Libro.entity.php';
-    require_once BASE_PATH . 'domain/entities/Autor.entity.php';
-    require_once BASE_PATH . 'domain/entities/Categoria.entity.php';
-    require_once BASE_PATH . 'domain/entities/Editorial.entity.php';
-    require_once BASE_PATH . 'domain/entities/Idioma.entity.php';
-    require_once BASE_PATH . 'domain/entities/Subgenero.entity.php';
     class LibroRepository implements ILibroRepository{
         private $dbClient;
         public function __construct(IClientDB $dbClient){
