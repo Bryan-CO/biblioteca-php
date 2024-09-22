@@ -1,6 +1,6 @@
 <?php
 require_once DB . 'ClientPostgre.impl.php';
-require_once REPOSITORY . 'Libro.repository.impl.php';
+require_once REPOSITORY . 'Libro.repo.impl.php';
 require_once SERVICE . 'Libro.service.impl.php';
 require_once CONTROLLER . 'LibroController.php';
 
