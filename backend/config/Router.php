@@ -41,7 +41,7 @@ class Router
         $subRuta = explode('/', $pathUrl);
         $subReqRuta = explode('/', REQUEST_URL);
         if (count($subReqRuta) === count($subRuta)) {
-            $params = [$param => $subReqRuta[2]];
+            $params = [$param => explode('?', $subReqRuta[2])[0]];
             self::initializeRequest($params);
         }
         return $subRuta[1] === $subReqRuta[1];
