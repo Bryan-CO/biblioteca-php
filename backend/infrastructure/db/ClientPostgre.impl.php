@@ -38,6 +38,7 @@ class ClientPostgreSQL implements IClientDB
             $db = null;
             return $rows;
         }
+        return $stmt->rowCount();
     }
 
     private function buildQuery($nameProcedure, $params = null){
