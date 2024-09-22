@@ -16,7 +16,7 @@
     
         public function addAutor($nombre)
         {
-            $this->autorService->addAutor($nombre);
+            return $this->autorService->addAutor($nombre);
         }
     
         public function editAutor($id)

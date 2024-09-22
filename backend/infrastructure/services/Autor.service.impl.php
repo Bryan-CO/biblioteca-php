@@ -9,7 +9,7 @@
             return $this->autorRepository->getAll();
         }
         public function addAutor($nombre){
-            $this->autorRepository->add($nombre);
+            return $this->autorRepository->add($nombre);
         }
         public function editAutor(Autor $autor){
             $this->autorRepository->edit($autor);
