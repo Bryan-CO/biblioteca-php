@@ -1,0 +1,30 @@
+.button-principal {
+    border: none;
+    padding: 0.7em 3em;
+    border-radius: 5px;
+    background-color: transparent;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: "Scope One", serif;
+
+    &.black {
+        border: 1px solid black;
+        color: black;
+
+        &:hover {
+            background-color: black;
+            color: white;
+        }
+    }
+
+    &.white {
+        border: 1px solid white;
+        color: white;
+
+        &:hover {
+            background-color: white;
+            color: black;
+        }
+    }
+}

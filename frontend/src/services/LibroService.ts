@@ -7,7 +7,7 @@ interface IResponse<T>{
 }
 
 async function getLibros(){
-    const res = await fetch('http://192.168.100.3:1234/libro')
+    const res = await fetch('http://192.168.100.3:1234/libros')
     const data : IResponse <Libro[]> = await res.json()
     if(!data.success){
         throw new Error(data.message ?? 'Ocurrió algo inesperado!')

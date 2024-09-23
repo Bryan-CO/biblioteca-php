@@ -1,0 +1,91 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.navbar{
+    padding: 0.5em 3em;
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    ul{
+        margin: 0;
+        display: flex;
+        /* justify-content: end; */
+        align-items: center;
+        list-style: none;
+        gap: 1.2rem;
+    }
+    .navbar-logo{
+        width: 5em;
+        transition: all .4s;
+        outline: none;
+    }
+
+    .navbar-logo:hover{
+        opacity: .8;
+    }
+    .link{
+        text-decoration: none;
+        color: black;
+        position: relative;
+        font-size: 1.05em;
+        padding: 0.4rem 0.5rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .link::before{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: black;
+        content: "";
+        background: black;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transition: all .3s ease-in-out;
+    }
+    .link:hover::before {
+        transform: scaleX(1);
+      }
+    
+      #contactanos{
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        color: black;
+        border-radius: 5px;
+        transition: all 0.6s ease;
+        padding: 0.2rem 0.5rem;
+      }
+
+      #contactanos:hover{
+        background-color: transparent;
+        color: #fff;
+        padding: 0.4rem 0.5rem;
+      }
+
+      #contactanos{
+        i{
+            margin-right: 0.5rem;
+        }
+      }
+}
+
+.main-principal{
+    background-color: white;
+    flex: 1;
+}
+
+footer{
+    background-color: #131313;
+    color: #f4f4f4;
+    flex-basis: 10%;
+}

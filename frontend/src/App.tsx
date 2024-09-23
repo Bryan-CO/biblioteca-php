@@ -3,7 +3,7 @@ import useLibro from './hooks/useLibro'
 function App():JSX.Element {
   const {data, error} = useLibro()
   return (
-    <>
+    <div style={{display: 'flex', gap: '3em', flexWrap: 'wrap'}}>
       {
         data.length > 0
         &&
@@ -18,7 +18,7 @@ function App():JSX.Element {
           urlImage={libro.urlImagen}
         />)
       }
-    </>
+    </div>
   )
 }
 
