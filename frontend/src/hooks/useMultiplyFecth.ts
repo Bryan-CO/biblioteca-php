@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react"
-import LibroService from "../services/LibroService"
-import { Libro } from "../types/Libro"
+import ApiService from "../services/ApiService"
 
-export default function useLibro() {
-    const [data, setData] = useState<Libro[]>([])
+export default function useMultiplyFetch<T>(endpoints: string[]) {
+    const [data, setData] = useState<T>()
     const [error, setError] = useState<string | null>(null)
     const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         const fetchLibros = async () => {
             try {
                 setIsLoading(true)
-                const libros = await LibroService.getLibros()
-                setData(libros)
+                const data1: T = await Promise.all(endpoints.map(endpoint => ApiService.getData(endpoint)))
+                console.log(data1)
+                setData(data)
                 setIsLoading(false)
             } catch (error) {
                 if (error instanceof Error) {
@@ -20,7 +20,7 @@ export default function useLibro() {
             }
         }
         fetchLibros()
-    }, [])
+    }, [endpoints])
 
     return { data, error, isLoading }
 }

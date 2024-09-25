@@ -1,0 +1,13 @@
+.input-container{
+    border-bottom: 1px solid #ACB1C6;
+    padding: 0 1em;
+    display: flex;
+    align-items: center;
+}
+
+.search-input{
+    outline: none;
+    border: none;
+    padding: 0.5em 0;
+    background-color: transparent;
+}

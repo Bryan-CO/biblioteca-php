@@ -36,3 +36,18 @@ export interface Libro {
     urlImagen: string
     estado: boolean
 }
+
+export interface CreateLibroDTO{
+    serialNumber: string
+    nombre: string
+    sinopsis: string
+    idAutor: number
+    idIdioma: number
+    idEditorial: number
+    idCategoria: number
+    idSubgenero: number
+    anio: number
+    unidades: number
+    cantPaginas: number
+    urlImagen: string
+}

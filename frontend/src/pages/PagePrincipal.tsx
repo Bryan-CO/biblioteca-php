@@ -9,7 +9,7 @@ export default function PagePrincipal(): JSX.Element {
                 <div className="principal-detail">
                     <h1>Bienvenidos a la biblioteca</h1>
                     <p><i>"Sumérgete en el océano de los libros"</i></p>
-                    <Button title="Empezar" color="white" />
+                    <Button title="Empezar" color="white" linkTo="libros" />
                 </div>
             </main>
         </div>

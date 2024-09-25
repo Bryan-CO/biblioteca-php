@@ -18,14 +18,14 @@ export default function Card({title, sinopsis, autor, categoria, subgenero, idio
                 <img className="card-image-img" src={urlImage} alt="Cactus imagen" />
             </div>
             <div className="card-tag">
-                <span className="tag-title">{categoria}</span>
-                <span className="tag-title">{idioma}</span>
-                <span className="tag-title">{subgenero}</span>
+                <span className="tag-title"># {categoria.toLowerCase()}</span>
+                <span className="tag-title"># {idioma.toLowerCase()}</span>
+                <span className="tag-title"># {subgenero.toLowerCase()}</span>
             </div>
             <div className="card-content">
 
                 <h2>{title}</h2>
-                <p>{sinopsis ? sinopsis : 'Próximamente...'}</p>
+                <p title={sinopsis}>{sinopsis ? sinopsis : 'Próximamente...'}</p>
             </div>
             <div className="card-footer">
                 <span className="author">{autor}</span>

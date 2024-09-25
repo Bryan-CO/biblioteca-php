@@ -1,6 +1,9 @@
 .button-principal {
     border: none;
-    padding: 0.7em 3em;
+    padding: 0.4em 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 5px;
     background-color: transparent;
     font-size: 1em;

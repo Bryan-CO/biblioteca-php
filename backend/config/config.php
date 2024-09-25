@@ -30,7 +30,7 @@ if (strpos($_SERVER['SERVER_SOFTWARE'], 'Apache') !== false) {
     // PHP/8.3.11
     define('BASE_URL', $url . '/');
 } else {
-    define('BASE_URL', $url  . '/');
+    define('BASE_URL', $url . '/');
 }
 
 class config

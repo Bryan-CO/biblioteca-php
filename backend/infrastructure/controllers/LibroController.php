@@ -16,8 +16,12 @@
 
     public function getLibroById(Request $req)
     {
-        $id = $req->params['id'];
-        ResponseModel::success($this->libroService->getLibroById($id));
+        try{
+            $id = $req->params['id'];
+            ResponseModel::success($this->libroService->getLibroById($id));
+        }catch(Error $e){
+            ResponseModel::error($e->getMessage(), 404);
+        }
     }
 
     public function addLibro(Request $req)

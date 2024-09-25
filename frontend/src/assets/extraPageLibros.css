@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.extra-page-libros__container {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255, .99);
+    padding: 2em 3em;
+    row-gap: 3em;
+}
+
+.banner-libros {
+    position: relative;
+    background: linear-gradient(10deg, #EAF2F5, #C3DBE5, #D1E8F1);
+    padding: 3em;
+    color: #3A4980;
+    border-radius: 18px;
+    display: flex;
+    justify-content: space-between;
+    .banner-button{
+        background-color: #3A4980;
+        color: white;
+        border: none;
+        padding: 1em 1.5em;
+        border-radius: 50px;
+    }
+
+    img{
+        position: absolute;
+        right: 0;
+        bottom: -1.5em;
+        height: 365px;
+    }
+}
+.banner-text-info{
+    width: 30%;
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2em;
+}
+
+.extra-list-libros {
+    flex: 1;
+}
+
+.extra-filter-libros{
+    display: flex;
+    justify-content: end;
+}

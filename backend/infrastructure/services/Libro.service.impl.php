@@ -11,7 +11,9 @@
             return $this->libroRepository->getAll();
         }
         public function getLibroById($id){
-            return $this->libroRepository->getById($id);
+            $libro = $this->libroRepository->getById($id);
+            if (count($libro) === 0) throw new Error('Libro not found!');
+            return $libro[0];
         }
         public function addLibro(Libro $libro){
             return $this->libroRepository->add($libro);
