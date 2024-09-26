@@ -10,7 +10,7 @@ export default function PageExtranetLibros(): JSX.Element {
     const { data, isLoading } = useLibro()
     const [filterData, setFilterData] = useState(data)
     const handleChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setFilterData(data.filter(val => val.nombre.includes(event.target.value.toLocaleLowerCase())))
+        setFilterData(data.filter(val => val.nombre.toLowerCase().includes(event.target.value.toLocaleLowerCase())))
     }
 
     useEffect(()=>{
