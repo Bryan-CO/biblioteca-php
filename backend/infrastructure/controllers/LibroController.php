@@ -98,7 +98,7 @@ class LibroController
     }
   }
 
-  public function deleteLibro($req)
+  public function deleteLibro(Request $req)
   {
     try {
       $id = $req->params['id'];
