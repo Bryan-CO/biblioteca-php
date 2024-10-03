@@ -48,3 +48,32 @@
         width: 20%;
     }
 }
+
+
+
+/* DATATABLE */
+.p-paginator-element{
+    color: black;
+}
+
+.p-paginator-current{
+    color: black
+}
+.p-paginator-bottom{
+    background-color: white;
+    border: none;
+}
+
+.p-datatable-tbody td{
+    background-color: white;
+    color: black;
+    border: none;
+    border-bottom: 1px solid gainsboro;
+}
+
+.p-datatable-thead th {
+    background-color: white;
+    color: black;
+    border: none;
+    border-bottom: 1px solid gainsboro;
+}
