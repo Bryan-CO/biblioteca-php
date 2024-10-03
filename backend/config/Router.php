@@ -2,58 +2,78 @@
 require_once 'Request.php';
 class Router
 {
-    private static Request $req;
+  private static Request $req;
 
-    public static function initializeRequest($params = [])
-    {
-        self::$req = new Request($params);
+  public static function initializeRequest($params = [])
+  {
+    self::$req = new Request($params);
+  }
+
+  static function GET($url, $callback)
+  {
+    if (REQUEST_METHOD === 'GET' && self::isMatch($url)) {
+      ob_clean();
+      header('Content-Type: application/json');
+      $callback(self::$req);
+      exit;
+    }
+  }
+
+  static function POST($url, $callback)
+  {
+    if (REQUEST_METHOD === 'POST' && self::isMatch($url)) {
+      ob_clean();
+      header('Content-Type: application/json');
+      $callback(self::$req);
+      exit;
+    }
+  }
+
+  static function PUT($url, $callback)
+  {
+    if (REQUEST_METHOD === 'PUT' && self::isMatch($url)) {
+      ob_clean();
+      header('Content-Type: application/json');
+      $callback(self::$req);
+      exit;
+    }
+  }
+
+  static function DELETE($url, $callback)
+  {
+    if (REQUEST_METHOD === 'DELETE' && self::isMatch($url)) {
+      ob_clean();
+      header('Content-Type: application/json');
+      $callback(self::$req);
+      exit;
+    }
+  }
+
+  private static function isMatch($pathUrl)
+  {
+
+    $param = self::containParameters($pathUrl);
+    if ($param === null) {
+      self::initializeRequest();
+      return $pathUrl === REQUEST_URL;
     }
 
-    static function GET($url, $callback)
-    {
-        if (REQUEST_METHOD === 'GET' && self::isMatch($url)) {
-            ob_clean();
-            header('Content-Type: application/json');
-            $callback(self::$req);
-            exit;
-        }
+    $subRuta = explode('/', $pathUrl);
+    $subReqRuta = explode('/', REQUEST_URL);
+    if (count($subReqRuta) === count($subRuta)) {
+      $params = [$param => explode('?', $subReqRuta[2])[0]];
+      self::initializeRequest($params);
     }
-
-    static function POST($url, $callback)
-    {
-        if (REQUEST_METHOD === 'POST' && self::isMatch($url)) {
-            ob_clean();
-            header('Content-Type: application/json');
-            $callback(self::$req);
-            exit;
-        }
+    return $subRuta[1] === $subReqRuta[1];
+  }
+  private static function containParameters($pathUrl)
+  {
+    $param = null;
+    foreach (explode('/', $pathUrl) as $rt) {
+      if (str_starts_with($rt, ':')) {
+        $param = substr($rt, 1);
+      }
     }
-
-    private static function isMatch($pathUrl)
-    {
-
-        $param = self::containParameters($pathUrl);
-        if ($param === null) {
-            self::initializeRequest();
-            return $pathUrl === REQUEST_URL;
-        }
-
-        $subRuta = explode('/', $pathUrl);
-        $subReqRuta = explode('/', REQUEST_URL);
-        if (count($subReqRuta) === count($subRuta)) {
-            $params = [$param => explode('?', $subReqRuta[2])[0]];
-            self::initializeRequest($params);
-        }
-        return $subRuta[1] === $subReqRuta[1];
-    }
-    private static function containParameters($pathUrl)
-    {
-        $param = null;
-        foreach (explode('/', $pathUrl) as $rt) {
-            if (str_starts_with($rt, ':')) {
-                $param = substr($rt, 1);
-            }
-        }
-        return $param;
-    }
+    return $param;
+  }
 }
