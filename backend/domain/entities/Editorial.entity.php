@@ -1,23 +1,23 @@
 <?php
 class Editorial implements JsonSerializable
 {
-  private $idEditoral;
+  private $idEditorial;
   private $nombre;
   private $estado;
-  public function __construct($idEditoral, $nombre, $estado = true)
+  public function __construct($idEditorial, $nombre, $estado = true)
   {
-    $this->idEditoral = $idEditoral;
+    $this->idEditorial = $idEditorial;
     $this->nombre = $nombre;
     $this->estado = $estado;
   }
 
   public function getIdEditoral()
   {
-    return $this->idEditoral;
+    return $this->idEditorial;
   }
-  public function setIdEditoral($idEditoral)
+  public function setIdEditoral($idEditorial)
   {
-    $this->idEditoral = $idEditoral;
+    $this->idEditorial = $idEditorial;
   }
   public function getNombre()
   {
