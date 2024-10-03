@@ -1,42 +1,42 @@
 <?php
 class Editorial implements JsonSerializable
 {
-    private $idEditoral;
-    private $nombre;
-    private $estado;
-    public function __construct($idEditoral, $nombre, $estado = true)
-    {
-        $this->idEditoral = $idEditoral;
-        $this->nombre = $nombre;
-        $this->estado = $estado;
-    }
+  private $idEditoral;
+  private $nombre;
+  private $estado;
+  public function __construct($idEditoral, $nombre, $estado = true)
+  {
+    $this->idEditoral = $idEditoral;
+    $this->nombre = $nombre;
+    $this->estado = $estado;
+  }
 
-    public function getIdEditoral()
-    {
-        return $this->idEditoral;
-    }
-    public function setIdEditoral($idEditoral)
-    {
-        $this->idEditoral = $idEditoral;
-    }
-    public function getNom()
-    {
-        return $this->nombre;
-    }
-    public function setNombre($nombre)
-    {
-        $this->nombre = $nombre;
-    }
-    public function getestado()
-    {
-        return $this->estado;
-    }
-    public function setestado($estado)
-    {
-        $this->estado = $estado;
-    }
-    public function jsonSerialize(): mixed
-    {
-        return get_object_vars($this);
-    }
+  public function getIdEditoral()
+  {
+    return $this->idEditoral;
+  }
+  public function setIdEditoral($idEditoral)
+  {
+    $this->idEditoral = $idEditoral;
+  }
+  public function getNombre()
+  {
+    return $this->nombre;
+  }
+  public function setNombre($nombre)
+  {
+    $this->nombre = $nombre;
+  }
+  public function getestado()
+  {
+    return $this->estado;
+  }
+  public function setestado($estado)
+  {
+    $this->estado = $estado;
+  }
+  public function jsonSerialize(): mixed
+  {
+    return get_object_vars($this);
+  }
 }
