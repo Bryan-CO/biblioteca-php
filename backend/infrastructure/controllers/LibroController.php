@@ -26,44 +26,86 @@ class LibroController
 
   public function addLibro(Request $req)
   {
-    $serialNumber = $req->body['serialNumber'];
-    $nombre = $req->body['nombre'];
-    $sinopsis = $req->body['sinopsis'];
-    $idAutor = $req->body['idAutor'];
-    $idIdioma = $req->body['idIdioma'];
-    $idEditorial = $req->body['idEditorial'];
-    $idCategoria = $req->body['idCategoria'];
-    $idSubgenero = $req->body['idSubgenero'];
-    $anio = $req->body['anio'];
-    $unidades = $req->body['unidades'];
-    $cantPaginas = $req->body['cantPaginas'];
-    $urlImagen = $req->body['urlImagen'];
+    try {
+      $serialNumber = $req->body['serialNumber'];
+      $nombre = $req->body['nombre'];
+      $sinopsis = $req->body['sinopsis'];
+      $idAutor = $req->body['idAutor'];
+      $idIdioma = $req->body['idIdioma'];
+      $idEditorial = $req->body['idEditorial'];
+      $idCategoria = $req->body['idCategoria'];
+      $idSubgenero = $req->body['idSubgenero'];
+      $anio = $req->body['anio'];
+      $unidades = $req->body['unidades'];
+      $cantPaginas = $req->body['cantPaginas'];
+      $urlImagen = $req->body['urlImagen'];
 
-    $libro = new Libro(
-      $serialNumber,
-      $nombre,
-      $sinopsis,
-      new Autor($idAutor, null),
-      new Idioma($idIdioma, null),
-      new Editorial($idEditorial, null),
-      new Categoria($idCategoria, null),
-      new Subgenero($idSubgenero, null),
-      $anio,
-      $unidades,
-      $cantPaginas,
-      $urlImagen
-    );
+      $libro = new Libro(
+        $serialNumber,
+        $nombre,
+        $sinopsis,
+        new Autor($idAutor, null),
+        new Idioma($idIdioma, null),
+        new Editorial($idEditorial, null),
+        new Categoria($idCategoria, null),
+        new Subgenero($idSubgenero, null),
+        $anio,
+        $unidades,
+        $cantPaginas,
+        $urlImagen
+      );
 
-    ResponseModel::success($this->libroService->addLibro($libro));
+      ResponseModel::success($this->libroService->addLibro($libro));
+    } catch (Exception $e) {
+      ResponseModel::error($e->getMessage());
+    }
   }
 
   public function editLibro(Request $req)
   {
-    $$this->libroService->editLibro($id);
+    try {
+      $id = $req->params['id'];
+      $nombre = $req->body['nombre'];
+      $sinopsis = $req->body['sinopsis'];
+      $idAutor = $req->body['idAutor'];
+      $idIdioma = $req->body['idIdioma'];
+      $idEditorial = $req->body['idEditorial'];
+      $idCategoria = $req->body['idCategoria'];
+      $idSubgenero = $req->body['idSubgenero'];
+      $anio = $req->body['anio'];
+      $unidades = $req->body['unidades'];
+      $cantPaginas = $req->body['cantPaginas'];
+      $urlImagen = $req->body['urlImagen'];
+
+      $libro = new Libro(
+        null,
+        $nombre,
+        $sinopsis,
+        new Autor($idAutor, null),
+        new Idioma($idIdioma, null),
+        new Editorial($idEditorial, null),
+        new Categoria($idCategoria, null),
+        new Subgenero($idSubgenero, null),
+        $anio,
+        $unidades,
+        $cantPaginas,
+        $urlImagen,
+        $id
+      );
+      ResponseModel::success($this->libroService->editLibro($libro));
+    } catch (Exception $e) {
+      ResponseModel::error($e->getMessage());
+    }
   }
 
-  public function deleteLibro($id)
+  public function deleteLibro($req)
   {
-    $this->libroService->deleteLibro($id);
+    try {
+      $id = $req->params['id'];
+      $this->libroService->deleteLibro($id);
+      ResponseModel::success(null, 200, "ok");
+    } catch (Exception $e) {
+      ResponseModel::error($e->getMessage());
+    }
   }
 }

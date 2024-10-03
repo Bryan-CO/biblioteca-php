@@ -1,10 +1,29 @@
-@URL = http://192.168.0.103:1234
+# @URL = http://192.168.0.103:1234
+@URL = http://localhost
 
 ### GET LIBROS
 GET {{URL}}/libros
 
 ### GET LIBRO POR ID
-GET {{URL}}/libros/3
+GET {{URL}}/libros/45
+
+###
+PUT {{URL}}/libros/45 HTTP/1.1
+content-type: application/json
+
+{
+  "nombre": "La odisea",
+  "sinopsis": "Una aventura de la epoca antigua",
+  "idAutor": "52",
+  "idIdioma": "9",
+  "idEditorial": "7",
+  "idCategoria": "9",
+  "idSubgenero": "11",
+  "anio": "1700",
+  "unidades": "30",
+  "cantPaginas": "130",
+  "urlImagen": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3L35whXu4S325MlOfiGz2SyoTOznrKkalBA&s"
+}
 
 ### GET AUTORES
 GET {{URL}}/autores

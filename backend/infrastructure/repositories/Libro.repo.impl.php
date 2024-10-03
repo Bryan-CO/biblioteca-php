@@ -37,6 +37,7 @@ class LibroRepository implements ILibroRepository
   public function edit(Libro $libro)
   {
     return $this->dbClient->executeProcedure("editlibro", TypeProcedure::FUNCTION, [
+      $libro->getIdLibro(),
       $libro->getNombre(),
       $libro->getSinopsis(),
       $libro->getAutor()->getIdAutor(),
@@ -50,5 +51,8 @@ class LibroRepository implements ILibroRepository
       $libro->getUrlImagen(),
     ]);
   }
-  public function delete($id) {}
+  public function delete($id)
+  {
+    $this->dbClient->executeProcedure("removelibro", TypeProcedure::CALL, [$id]);
+  }
 }
