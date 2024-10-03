@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Layout from "../layouts/Layout";
 import PageLibros from "../pages/PageLibros";
 import PageLibroDetail from "../pages/PageLibroDetail";
@@ -12,7 +12,7 @@ export default function AppRouter(): JSX.Element {
                 <Route path="/" element={<PagePrincipal />}/>
                 <Route path="libros" element={<PageExtranetLibros />}/>
                 <Route path="/intranet" element={<Layout />}>
-                    <Route index element={<PageLibros />} />
+                    <Route index element={<Navigate to={'libros'} />} />
                     <Route path="libros" element={<PageLibros />} />
                     <Route path="libros/:id" element={<PageLibroDetail />} />
                     <Route path="herramientas" element={<PageLibroDetail />} />

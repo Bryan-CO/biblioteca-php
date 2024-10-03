@@ -8,5 +8,20 @@ body {
     margin: 0;
     background-color: black;
     color: white;
-    font-family: "Scope One", serif;
 }
+
+.sidebar{
+    a{
+        text-decoration: none;
+    }
+}
+
+.sidebar-link.active{
+    background-color: #EFF6FF;
+    color: black !important;
+}
+
+.sidebar-link.active:hover{
+    background-color: #EFF6FF;
+    color: white !important;
+}/* ESTO ES UNA CLASE DEL COMPONENTE SIDEBAR DE PRIME REACT, tuve que desactivarla por aca pq no hacia caso xd*/
