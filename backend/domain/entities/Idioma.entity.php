@@ -26,7 +26,7 @@ class Idioma implements JsonSerializable
     return $this->nombre;
   }
 
-  public function setnomgetNombre($nombre)
+  public function setNombre($nombre)
   {
     $this->nombre = $nombre;
   }
