@@ -1,0 +1,30 @@
+form.form-see {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  background: white;
+
+  & picture {
+    width: 100%;
+    display: grid;
+    place-content: center;
+    & span.p-image {
+      display: inline-block;
+      justify-content: center;
+
+      & button.p-image-preview-indicator {
+        border-radius: 20px;
+      }
+    }
+  }
+  & label {
+    color: black;
+  }
+  & .separator {
+    grid-column: span 2;
+    row-gap: 2 2;
+    &::before {
+      border-color: #ddd;
+    }
+  }
+}

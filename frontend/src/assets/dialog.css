@@ -1,0 +1,18 @@
+:root {
+  --close: #f35858;
+}
+.custom-dialog-header .p-dialog-header {
+  background-color: white;
+  color: black;
+  & .p-dialog-title {
+    font-size: 2rem;
+  }
+}
+
+svg {
+  color: black;
+  transition: color 1s;
+  &:hover {
+    color: var(--close);
+  }
+}

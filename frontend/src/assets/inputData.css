@@ -1,0 +1,20 @@
+div.input-data {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 5px;
+  width: 50%;
+}
+
+input.p-inputtext {
+  background: white;
+  width: 85%;
+  color: black;
+  padding: 10px 15px;
+  box-shadow: none;
+  border: 1px solid #ccc;
+  font-weight: 700;
+  &:hover {
+    border: 1px solid #2860db;
+  }
+}
