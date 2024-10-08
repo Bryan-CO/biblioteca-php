@@ -12,3 +12,7 @@
     background-color: transparent;
     color: black;
 }
+
+.rs-picker-select-menu {
+    z-index: 9999 !important; /* Aumenta el z-index del dropdown */
+  }

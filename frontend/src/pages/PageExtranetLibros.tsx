@@ -22,9 +22,7 @@ export default function PageExtranetLibros(): JSX.Element {
             <main className="extra-page-libros__container">
                 <header className="banner-libros">
                     <div className="banner-text-info">
-                        <h1>¡Tenemos desde
-                            cuentos hasta historias
-                            depresivas como mi vida!</h1>
+                        <h1>¡Desde cuentos alegres hasta historias que te harán reflexionar! ¡Descúbrelos!</h1>
                         <button className="banner-button">
                             Contáctenos
                         </button>

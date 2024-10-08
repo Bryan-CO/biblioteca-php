@@ -1,32 +1,34 @@
-import { Dropdown } from "primereact/dropdown";
+import 'rsuite/dist/rsuite.min.css';
 import "../assets/combo.css";
+import { SelectPicker } from "rsuite";
 
 interface ComboProps<T> {
   title: string;
   data: T[];
-  item: T;
-  onChange: (value: unknown) => void;
-  optionalLabel: keyof T;
-  optionalValue: keyof T;
+  value?: string;
+  isLoading: boolean;
+  onChange: (value: string | null) => void;
 }
 
 export const Combo = <T extends object>({
   title,
   data,
-  item,
-  onChange,
-  optionalLabel,
-  optionalValue,
+  value,
+  isLoading,
+  onChange
 }: ComboProps<T>) => {
   return (
-    <div className="combo-box">
+    <div className="combo-box" style={{width: '50%'}}>
       <label>{title}</label>
-      <Dropdown
-        options={data}
-        value={item}
-        onChange={(e) => onChange(e.value)}
-        optionLabel={optionalLabel.toString()}
-        optionValue={optionalValue.toString()}
+      <SelectPicker
+        size="lg"
+        data={data}
+        defaultValue={value}
+        placeholder="Selecciona un autor"
+        searchable
+        style={{width: 380}}
+        loading={isLoading}
+        onChange={onChange}
       />
     </div>
   );

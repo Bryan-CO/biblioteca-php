@@ -4,6 +4,7 @@ import PageLibros from "../pages/PageLibros";
 import PageLibroDetail from "../pages/PageLibroDetail";
 import PagePrincipal from "../pages/PagePrincipal";
 import PageExtranetLibros from "../pages/PageExtranetLibros";
+import PageHerramientas from "../pages/PageHerramientas";
 
 export default function AppRouter(): JSX.Element {
     return (
@@ -15,7 +16,7 @@ export default function AppRouter(): JSX.Element {
                     <Route index element={<Navigate to={'libros'} />} />
                     <Route path="libros" element={<PageLibros />} />
                     <Route path="libros/:id" element={<PageLibroDetail />} />
-                    <Route path="herramientas" element={<PageLibroDetail />} />
+                    <Route path="herramientas" element={<PageHerramientas />} />
                 </Route>
             </Routes>
         </BrowserRouter>

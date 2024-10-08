@@ -19,20 +19,6 @@ define('CONFIG', BASE_PATH . "config/");
 define('ROUTE', BASE_PATH . "routes/");
 define('SHARED', BASE_PATH . "shared/");
 
-$relative = str_replace($_SERVER["DOCUMENT_ROOT"], "", $_SERVER["SCRIPT_FILENAME"]);
-$folder = explode("/", trim($relative, "/"))[0];
-$url = $_SERVER["DOCUMENT_ROOT"];
-$folder = $url . "/" . $folder;
-
-if (strpos($_SERVER['SERVER_SOFTWARE'], 'Apache') !== false) {
-    define('BASE_URL', $folder . '/');
-} elseif (strpos($_SERVER['SERVER_SOFTWARE'], '(Development Server)') !== false) {
-    // PHP/8.3.11
-    define('BASE_URL', $url . '/');
-} else {
-    define('BASE_URL', $url . '/');
-}
-
 class config
 {
     public static $DB_USER = "postgres";

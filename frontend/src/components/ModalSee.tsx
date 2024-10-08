@@ -26,7 +26,7 @@ export default function ModalSee({
           <InputData data={libro.autor.nombre} title="Autor" disabled />
           <InputData data={libro.urlImagen} title="Portada" disabled />
           <Divider className="separator" />
-          <Textarea data={libro.sinopsis} title="Sinopsis" />
+          <Textarea data={libro.sinopsis} title="Sinopsis" disabled />
           <InputData
             data={libro.cantPaginas}
             title="Cantidad de Paginas"

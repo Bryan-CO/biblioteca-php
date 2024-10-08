@@ -2,3 +2,7 @@
   display: flex;
   flex-direction: column;
 }
+
+.rs-picker-toggle-value{
+  color: black !important;
+}

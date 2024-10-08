@@ -3,7 +3,7 @@ import { useState } from "react";
 import "../assets/inputData.css";
 
 interface InputDataProps {
-  data: string | number;
+  data?: string | number;
   title: string;
   disabled: boolean;
 }
@@ -12,8 +12,9 @@ export const InputData = ({
   disabled = false,
   data,
   title,
+  onChange
 }: InputDataProps) => {
-  const [value, setValue] = useState(data.toString());
+  const [value, setValue] = useState(data?.toString());
 
   return (
     <div className="input-data">
@@ -21,7 +22,7 @@ export const InputData = ({
       <InputText
         id="username"
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={onChange}
         disabled={disabled}
       />
     </div>
